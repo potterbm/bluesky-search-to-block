@@ -1,5 +1,5 @@
 {
-  "client_id": "http://search-to-block.bryan.town/public/oauth/client-metadata.json",
+  "client_id": "http://search-to-block.bryan.town/oauth/client-metadata.json",
   "client_name": "search-to-block",
   "client_uri": "http://search-to-block.bryan.town",
   "logo_uri": "http://search-to-block.bryan.town/logo.png",

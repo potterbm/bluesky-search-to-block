@@ -14,7 +14,7 @@ import { AuthContext, type AuthContextType } from './context';
 
 configureOAuth({
   metadata: {
-    client_id: `${import.meta.env.VITE_APP_URL}/public/oauth/client-metadata.json`,
+    client_id: `${import.meta.env.VITE_APP_URL}/oauth/client-metadata.json`,
     redirect_uri: `${import.meta.env.VITE_APP_URL}`,
   },
 });

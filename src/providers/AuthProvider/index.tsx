@@ -26,6 +26,8 @@ const client = new BrowserOAuthClient({
     application_type: 'web',
     client_name: 'search-to-block',
     client_uri: 'https://search-to-block.bryan.town',
+    token_endpoint_auth_method: 'none',
+    dpop_bound_access_tokens: true,
   },
   handleResolver: 'https://bsky.social',
 });

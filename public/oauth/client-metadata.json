@@ -6,5 +6,7 @@
   "scope": "atproto",
   "application_type": "web",
   "client_name": "search-to-block",
+  "token_endpoint_auth_method": "none",
+  "dpop_bound_access_tokens": true,
   "client_uri": "https://search-to-block.bryan.town"
 }

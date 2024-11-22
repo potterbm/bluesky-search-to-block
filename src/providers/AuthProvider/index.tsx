@@ -18,14 +18,14 @@ import { resultHasState } from './utils';
 
 const client = new BrowserOAuthClient({
   clientMetadata: {
-    client_id: 'http://search-to-block.bryan.town/oauth/client-metadata.json',
-    redirect_uris: ['http://search-to-block.bryan.town'],
+    client_id: 'https://search-to-block.bryan.town/oauth/client-metadata.json',
+    redirect_uris: ['https://search-to-block.bryan.town'],
     response_types: ['code'],
     grant_types: ['authorization_code', 'refresh_token'],
     scope: 'atproto',
     application_type: 'web',
     client_name: 'search-to-block',
-    client_uri: 'http://search-to-block.bryan.town',
+    client_uri: 'https://search-to-block.bryan.town',
   },
   handleResolver: 'https://bsky.social',
 });

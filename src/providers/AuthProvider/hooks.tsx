@@ -1,33 +1,34 @@
-import {
-  useContext,
-  useMemo,
-} from 'react';
-import type { XRPC } from '@atcute/client';
+import { useContext, useMemo } from 'react';
+// import type { XRPC } from '@atcute/client';
 import { AuthContext } from './context';
+import type { Agent } from '@atproto/api';
 
 export function useAuthState() {
-  const {isAuthed, loading, error} = useContext(AuthContext);
+  const { isAuthed, did, error } = useContext(AuthContext);
 
-  return useMemo(() => ({
-    isAuthed,
-    loading,
-    error,
-  }), [error, isAuthed, loading]);
+  return useMemo(
+    () => ({
+      isAuthed,
+      did,
+      error,
+    }),
+    [did, error, isAuthed]
+  );
 }
 
 export function useIdentity(): [string, boolean] {
   const context = useContext(AuthContext);
-  return [context.username, context.isAuthed];
+  return [context.did, context.isAuthed];
 }
 
-export function useFinalizeAuth(params?: URLSearchParams): void {
-  const { finalizeAuth } = useContext(AuthContext);
+// export function useFinalizeAuth(params?: URLSearchParams): void {
+//   const { finalizeAuth } = useContext(AuthContext);
 
-  if (!params) return;
+//   if (!params) return;
 
-  finalizeAuth(params);
-}
+//   finalizeAuth(params);
+// }
 
-export function useRpc(): XRPC | undefined {
-  return useContext(AuthContext).rpc
+export function useAgent(): Agent | undefined {
+  return useContext(AuthContext).agent;
 }

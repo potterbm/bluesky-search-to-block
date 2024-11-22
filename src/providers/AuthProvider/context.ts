@@ -1,24 +1,25 @@
-import {
-  createContext,
-} from 'react';
-import type { XRPC } from '@atcute/client';
+import type { Agent } from '@atproto/api';
+import { createContext } from 'react';
+// import type { XRPC } from '@atcute/client';
 
 export interface AuthContextType {
-  rpc?: XRPC;
+  agent?: Agent;
+  // rpc?: XRPC;
   isAuthed: boolean;
-  loading: boolean;
   error?: string;
-  username: string;
-  finalizeAuth: (params: URLSearchParams) => void;
+  did: string;
+  // finalizeAuth: (params: URLSearchParams) => void;
+  login: (username: string) => Promise<void>;
 }
 
 export const emptyContext: AuthContextType = {
-  rpc: undefined,
+  agent: undefined,
+  // rpc: undefined,
   isAuthed: false,
-  loading: false,
-  username: '',
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  finalizeAuth: () => {},
+  did: '',
+
+  // finalizeAuth: () => {},
+  login: () => Promise.resolve(undefined),
 };
 
 export const AuthContext = createContext(emptyContext);

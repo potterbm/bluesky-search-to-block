@@ -1,15 +1,10 @@
 {
   "client_id": "http://search-to-block.bryan.town/oauth/client-metadata.json",
-  "client_name": "search-to-block",
-  "client_uri": "http://search-to-block.bryan.town",
-  "logo_uri": "http://search-to-block.bryan.town/logo.png",
-  "tos_uri": "http://search-to-block.bryan.town/tos",
-  "policy_uri": "http://search-to-block.bryan.town/policy",
-  "redirect_uris": ["http://search-to-block.bryan.town/callback"],
-  "scope": "atproto",
-  "grant_types": ["authorization_code", "refresh_token"],
+  "redirect_uris": ["http://search-to-block.bryan.town"],
   "response_types": ["code"],
-  "token_endpoint_auth_method": "none",
+  "grant_types": ["authorization_code", "refresh_token"],
+  "scope": "atproto",
   "application_type": "web",
-  "dpop_bound_access_tokens": true
+  "client_name": "search-to-block",
+  "client_uri": "http://search-to-block.bryan.town"
 }

@@ -1,22 +1,9 @@
 import { ChangeEvent, MouseEventHandler, useCallback, useState } from 'react';
-import { resolveFromIdentity } from '@atcute/oauth-browser-client';
-import { createAuthorizationUrl } from '@atcute/oauth-browser-client';
-
-async function login(username: string) {
-  const { identity, metadata } = await resolveFromIdentity(username);
-  console.log('identity, metadata', identity, metadata);
-
-  const authUrl = await createAuthorizationUrl({
-    metadata: metadata,
-    identity: identity,
-    scope: 'atproto transition:generic transition:chat.bsky',
-  });
-  console.log('authUrl', authUrl);
-  window.location.assign(authUrl);
-}
+import { useLogin } from '../providers/AuthProvider/hooks';
 
 export default function Login() {
   const [username, setUsername] = useState('');
+  const login = useLogin();
 
   const handleUsernameChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) =>
@@ -35,7 +22,7 @@ export default function Login() {
 
       void login(loginUsername);
     },
-    [username, setUsername]
+    [username, login]
   );
 
   return (

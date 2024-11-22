@@ -16,6 +16,10 @@ export function useAuthState() {
   );
 }
 
+export function useLogin() {
+  return useContext(AuthContext).login;
+}
+
 export function useIdentity(): [string, boolean] {
   const context = useContext(AuthContext);
   return [context.did, context.isAuthed];

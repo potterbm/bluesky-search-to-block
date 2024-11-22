@@ -3,14 +3,14 @@ import { useAuthState } from './providers/AuthProvider/hooks';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 export default function Layout({ children }: PropsWithChildren) {
-  const { isAuthed, loading } = useAuthState();
+  const { isAuthed } = useAuthState();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAuthed && !loading) {
-      navigate('/login')
+    if (!isAuthed) {
+      navigate('/login');
     }
-  }, [isAuthed, loading, navigate])
+  }, [isAuthed, navigate]);
 
   return (
     <>

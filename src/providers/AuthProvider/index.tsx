@@ -19,7 +19,7 @@ import { resultHasState } from './utils';
 const client = new BrowserOAuthClient({
   clientMetadata: {
     client_id: 'http://search-to-block.bryan.town/oauth/client-metadata.json',
-    redirect_uris: ['http://search-to-block.bryan.town/#/login/callback'],
+    redirect_uris: ['http://search-to-block.bryan.town'],
     response_types: ['code'],
     grant_types: ['authorization_code', 'refresh_token'],
     scope: 'atproto',

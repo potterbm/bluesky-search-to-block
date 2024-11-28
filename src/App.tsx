@@ -3,7 +3,9 @@ import './App.css';
 import Layout from './Layout';
 import Login from './pages/Login';
 import Search from './pages/Search';
-import AuthProvider from './providers/AuthProvider';
+import AuthProvider from './providers/AuthProvider/AuthProvider';
+import { ChakraProvider } from '@chakra-ui/react';
+import { system } from './theme';
 
 const router = createHashRouter([
   {
@@ -26,9 +28,11 @@ const router = createHashRouter([
 
 function App() {
   return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <ChakraProvider value={system}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </ChakraProvider>
   );
 }
 

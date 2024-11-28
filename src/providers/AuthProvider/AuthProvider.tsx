@@ -77,7 +77,7 @@ export default function AuthProvider({ children }: PropsWithChildren) {
     try {
       await client.signIn(username, {
         state: '',
-        prompt: 'none', // Attempt to sign in without user interaction (SSO)
+        prompt: 'login', // Attempt to sign in without user interaction (SSO)
         ui_locales: 'en', // Only supported by some OAuth servers (requires OpenID Connect support + i18n support)
         // signal: new AbortController().signal, // Optional, allows to cancel the sign in (and destroy the pending authorization, for better security)
       });
